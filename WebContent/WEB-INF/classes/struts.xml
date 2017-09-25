@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="com.alibaba.struts2" extends="struts-default">
+   
+      <action name="login"
+            class="com.alibaba.struts2.LoginAction" 
+            method="execute">
+            <result name="success">/index.jsp</result>
+            <result name="error">/Account/login.jsp</result>
+      </action>
+      <action name="UploadImageStruts" 
+             class="com.alibaba.struts2.UploadImageStruts" 
+             method="upload">
+             <result name="success">/Guoyuan/UploadImage.jsp</result>   
+      </action> 
+   </package>
+</struts>

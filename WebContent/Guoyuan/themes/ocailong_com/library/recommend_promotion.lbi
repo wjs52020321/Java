@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--特价促销 begin-->
+<!-- {if $promotion_goods} -->
+<div class="blank2"></div>
+<section class="item_show_box1 box1 region" id="JS_limit_table">
+    <h3>
+      <a target="_top" href="search.php?intro=promotion">
+        <span class="titico"></span>特价促销<span class="titmore"><i class="ico_16"></i></span>
+      </a>
+    </h3>
+    <div class="flex flex-f-row">
+        <!-- {foreach name=goods from=$promotion_goods key=key item=goods}-->
+        <div class="goodsItem flex_in">
+            <a href="{$goods.url}">
+                <img src="{$site_url}{$goods.thumb}" alt="{$goods.name|escape:html}" />
+            </a>
+            <div style="text-align:center;line-height:1.5rem;">
+            <!-- {if $goods.promote_price neq ""} --> 
+            <span class="price_s"> {$goods.promote_price} </span> 
+            <!-- {else}--> 
+            <span class="price_s"> {$goods.shop_price} </span> 
+            <!--{/if}-->
+            <br>{$goods.name|escape:html|truncate:12}
+            </div>
+            <div class="timedjs">
+	    <div class="JS_leaveTime" data-timeline="{$goods.promote_end_date}"><em>00</em>天<em>00</em>时<em>00</em>分<em>00</em>秒</div>
+            </div>
+        </div>
+         <!--{if $smarty.foreach.goods.iteration%3 eq 0}--></div><div class="flex flex-f-row"><!--{/if}-->
+        <!-- {/foreach} -->
+    </div>
+</section>
+<!-- {/if} -->
+<!--特价促销 end-->
